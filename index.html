@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <script>
-        //alert("Hello World");
-        var greeting = "Hello World"
-        console.log(greeting);
-        
-        var age = 31;
-        console.log(age);
-        console.log(`My age is ${age}`);
-    </script>
+<script>
+    //alert("Hello World");
+    var greeting = "Hello World"
+    console.log(greeting);
+
+    var age = 31;
+    console.log(age);
+    console.log(`My age is ${age}`);
+
+    //Here you define a global variable that contains 3 videos to whatch.
+    var availableYoutubeVideos = ["video1", "video2", "video3"];
+    //Here you define the function that call itself recursively
+    function whatchNextVideo(availableYoutubeVideos) {
+        // If I have more videos in the Array than call the function Recursivly
+        if (availableYoutubeVideos.length > 0) {
+            console.info("You have " + availableYoutubeVideos.length + " more videos to watch: " + availableYoutubeVideos);
+            //The .pop() function removes the last element from the Array. After this the array size will be reduced by 1 element.
+            availableYoutubeVideos.pop();
+            //This is the Recursive call, the function whatchNextVideo(...) calls itself and it stops when availableYoutubeVideos.length is 0, which means there are no more videos to whatch.
+            whatchNextVideo(availableYoutubeVideos);
+        } else {
+            console.info("Congratulations!!! You watched all the videos.");
+        }
+    }
+    //Here you execute the function passing in input the global variable define above.
+    whatchNextVideo(availableYoutubeVideos);
+
+    
+    var availableDrinkBottle = ["bottle1", "bottle2", "bottle3"];
+    function drinkNextBottle(availableDrinkBottle) {
+        if (availableDrinkBottle.length > 0) {
+            console.info("You have " + availableDrinkBottle.length + " more bottle to drink: " + availableDrinkBottle);
+            availableDrinkBottle.pop();
+            drinkNextBottle(availableDrinkBottle);
+        } else {
+            console.info("Congratulations!!! You drinked all the milk bottles.");
+        }
+    }
+    drinkNextBottle(availableDrinkBottle);
+
+    var availableDrinkBottle = ["bottle1", "bottle2", "bottle3"];
+    function drinkNextBottle(availableDrinkBottle) {
+        if (availableDrinkBottle.length > 0) {
+            console.info("You have " + availableDrinkBottle.length + " more bottle to drink: " + availableDrinkBottle);
+            availableDrinkBottle.pop();
+            drinkNextBottle(availableDrinkBottle);
+        } else {
+            console.info("Congratulations!!! You drinked all the milk bottles.");
+        }
+    }
+    drinkNextBottle(availableDrinkBottle);
+
+
+
+
+</script>
 <body>
 
-<h1>My First Heading, Claudia</h1>
-<p>My first paragraph.</p>
-<p>Hello World</p>
+    <h1>My First Heading, Claudia</h1>
+    <p>My first paragraph.</p>
+    <p>Hello World</p>
 
 
 </body>
+
 </html>
